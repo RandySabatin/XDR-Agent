@@ -1,0 +1,30 @@
+{
+  "LogHandler": {
+    "sources": [
+      {
+        "type": "EventLog",
+        "startAtOldestRecord": true,
+        "eventFormatMultiLine": false,
+        "channels": [
+          {
+            "name": "Microsoft-Windows-Windows Defender/Operational",
+            "level": "Warning"
+          },
+          {
+            "name": "Microsoft-Windows-sysmon/operational",
+            "level": "information"
+          }
+        ]
+      }
+    ]
+  },
+  "LogsQueueSender": {
+	  "send_interval": "7",
+	  "send_max_event": "300",
+	  "send_folderpath": "c:/sysmon",
+	  "send_urlpath": "https://receive.com"
+  },
+  "LogsQueue": {
+      "queue_max_event": "3000"
+  }  
+}
